@@ -1,0 +1,29 @@
+Projekt: To-Do List Manager
+Cel: Aplikacja do zarządzania listą zadań w architekturze warstwowej.
+
+=== Warstwa Prezentacji (UI) ===
+Klasa: UI
+Opis: Odpowiada za wyświetlanie zadań użytkownikowi i odbieranie jego danych.
+Metody:
+- wyswietlZadania(): Wyświetla listę zadań w czytelnej formie.
+- dodajZadanie(): Odbiera dane od użytkownika i przekazuje do logiki biznesowej.
+- usunZadanie(): Przekazuje informację o usunięciu zadania do warstwy logiki biznesowej.
+
+=== Warstwa Logiki Biznesowej (Business Logic) ===
+Klasa: ZarzadzanieZadaniami
+Opis: Zawiera reguły aplikacji i operacje na danych.
+Metody:
+- dodajZadanie(tresc): Dodaje nowe zadanie do listy.
+- usunZadanie(id): Usuwa zadanie po identyfikatorze.
+- filtrujZadania(status): Filtruje zadania według statusu (np. zrobione / do zrobienia).
+- edytujZadanie(id, nowaTresc): Pozwala zmienić treść zadania.
+
+=== Warstwa Dostępu do Danych (Data Access) ===
+Klasa: BazaDanych
+Opis: Obsługuje zapis i odczyt danych z pliku tekstowego.
+Metody:
+- zapiszDoPliku(listaZadan): Zapisuje wszystkie zadania do pliku tasks.txt.
+- odczytajZPliku(): Odczytuje listę zadań z pliku tasks.txt.
+- aktualizujZadanie(id, nowaTresc): Aktualizuje dane w pliku.
+- usunZadanie(id): Usuwa zadanie z pliku.
+
